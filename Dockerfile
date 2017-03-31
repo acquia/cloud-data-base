@@ -1,4 +1,4 @@
-# Copyright 2016 Acquia, Inc.
+# Copyright 2017 Acquia, Inc.
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -12,20 +12,47 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-FROM centos:7.1.1503
+FROM centos:7.3.1611
+MAINTAINER Acquia Engineering <engineering@acquia.com>
 
-# Install packages and RVM.
+ARG RUBY_VERSION
+ENV RUBY_VERSION ${RUBY_VERSION:-2.2.3}
+
 RUN set -xe \
-    && yum remove -y fakesystemd \
-    && yum install -y systemd-devel mysql-devel git tar patch libyaml-devel glibc-headers autoconf gcc-c++ glibc-devel patch readline-devel libffi-devel make bzip2 automake libtool bison sqlite-devel \
+    # Install base system dependencies
+    && yum install -y \
+      autoconf \
+      automake \
+      bison \
+      bzip2 \
+      cmake \
+      gcc-c++ \
+      git \
+      glibc-devel \
+      glibc-headers \
+      libffi-devel \
+      libicu-devel \
+      libtool \
+      libyaml-devel \
+      make \
+      mysql-devel \
+      patch \
+      patch \
+      readline-devel \
+      sqlite-devel \
+      systemd-devel \
+      tar \
+      which \
+
+    # Install Ruby and Bundler
     && gpg --keyserver hkp://keys.gnupg.net --recv-keys 409B6B1796C275462A1703113804BB82D39DC0E3 \
     && curl -sSL https://get.rvm.io | bash \
-    && yum clean all
+    && /bin/bash -l -c "rvm install ${RUBY_VERSION} \
+      && rvm default ${RUBY_VERSION} \
+      && gem install bundler \
+      && rvm cleanup all" \
 
-# Install Ruby and Bundler.
-RUN /bin/bash -l -c "rvm install 2.2.3 \
-    && rvm default 2.2.3 \
-    && gem install bundler \
-    && rvm cleanup all"
-
-MAINTAINER Acquia Engineering <engineering@acquia.com>
+  # Cleanup
+  && yum clean all \
+  && rm -rf /tmp/* \
+  && rm -rf /var/tmp/*
