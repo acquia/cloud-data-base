@@ -4,6 +4,6 @@ services: docker
 install: docker ps -a
 script:
   - docker build -t cloud-data-base .
-  - docker run -v "$PWD":/opt/test -w /opt/test --rm -t cloud-data-base bash -l -c 'bundle install -j2'
+  - docker run -v $(pwd)/test:/opt/test -w /opt/test --rm -t cloud-data-base bash -l -c 'bundle install -j2'
 notifications:
   email: false
