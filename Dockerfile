@@ -49,7 +49,7 @@ RUN set -xe \
     && curl -sSL https://get.rvm.io | bash \
     && /bin/bash -l -c "rvm install ${RUBY_VERSION} \
       && rvm default ${RUBY_VERSION} \
-      && gem install bundler \
+      && gem install bundler -v 1.14.6 \
       && rvm cleanup all" \
 
   # Cleanup
