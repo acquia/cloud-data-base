@@ -16,7 +16,7 @@ FROM centos:7.3.1611
 MAINTAINER Acquia Engineering <engineering@acquia.com>
 
 ARG RUBY_VERSION
-ENV RUBY_VERSION ${RUBY_VERSION:-2.3.4}
+ENV RUBY_VERSION ${RUBY_VERSION:-2.4.1}
 
 RUN set -xe \
     # Install base system dependencies
