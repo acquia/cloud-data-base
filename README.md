@@ -8,7 +8,7 @@ This Docker image is designed to mimic our deployment environment for use in
 build tools:
 
 - CentOS 7
-- Ruby 2.2, 2.3 and 2.4
+- Ruby 2.2, 2.3, 2.4 and 2.5
 - systemd
 
 ## Fork please!
