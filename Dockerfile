@@ -12,11 +12,11 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-FROM centos:7.3.1611
+FROM centos:7.5.1804
 MAINTAINER Acquia Engineering <engineering@acquia.com>
 
 ARG RUBY_VERSION
-ENV RUBY_VERSION ${RUBY_VERSION:-2.4.1}
+ENV RUBY_VERSION ${RUBY_VERSION:-2.5.1}
 
 RUN set -xe \
     # Install base system dependencies
