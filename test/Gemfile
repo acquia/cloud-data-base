@@ -5,10 +5,10 @@ source 'https://rubygems.org'
 # libmysql
 gem 'mysql2'
 # libxml2, libxslt
-gem 'nokogiri'
+gem 'nokogiri', '>= 1.8.5'
 # libsqlite3
 gem 'sqlite3'
 # systemd
 gem 'systemd-daemon',
-    github: 'pdrakeweb/systemd-daemon',
+    github: 'acquia/systemd-daemon',
     ref: 'wip'
