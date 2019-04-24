@@ -1,6 +1,6 @@
 GIT
-  remote: git://github.com/pdrakeweb/systemd-daemon.git
-  revision: 44623468b56dcd945242e313bef1cd6aeb48068b
+  remote: git://github.com/acquia/systemd-daemon.git
+  revision: 0f9a624f99ea50b35508c2fa894942092636c661
   ref: wip
   specs:
     systemd-daemon (0.1.0)
@@ -8,10 +8,10 @@ GIT
 GEM
   remote: https://rubygems.org/
   specs:
-    mini_portile2 (2.0.0)
+    mini_portile2 (2.4.0)
     mysql2 (0.4.2)
-    nokogiri (1.6.7.2)
-      mini_portile2 (~> 2.0.0.rc2)
+    nokogiri (1.9.1)
+      mini_portile2 (~> 2.4.0)
     sqlite3 (1.3.11)
 
 PLATFORMS
@@ -19,9 +19,9 @@ PLATFORMS
 
 DEPENDENCIES
   mysql2
-  nokogiri
+  nokogiri (>= 1.8.5)
   sqlite3
   systemd-daemon!
 
 BUNDLED WITH
-   1.11.2
+   1.17.1
