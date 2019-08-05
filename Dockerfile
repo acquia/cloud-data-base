@@ -16,7 +16,7 @@ FROM centos:7.6.1810
 MAINTAINER Acquia Engineering <engineering@acquia.com>
 
 ARG RUBY_VERSION
-ENV RUBY_VERSION ${RUBY_VERSION:-2.5.1}
+ENV RUBY_VERSION ${RUBY_VERSION:-2.6.3}
 
 # Install base system dependencies
 RUN set -xe \
@@ -54,5 +54,5 @@ RUN gpg --keyserver hkp://keys.gnupg.net --recv-keys 409B6B1796C275462A170311380
     && /bin/bash -l -c "rvm install ${RUBY_VERSION} \
       && rvm default ${RUBY_VERSION} \
       && gem install bundler \
-      && rvm cleanup all" 
+      && rvm cleanup all"
 
