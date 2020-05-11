@@ -5,7 +5,7 @@ source 'https://rubygems.org'
 # libmysql
 gem 'mysql2'
 # libxml2, libxslt
-gem 'nokogiri', '>= 1.10.4'
+gem 'nokogiri', '>= 1.10.8'
 # libsqlite3
 gem 'sqlite3'
 # systemd
