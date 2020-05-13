@@ -1,5 +1,5 @@
 GIT
-  remote: git://github.com/acquia/systemd-daemon.git
+  remote: https://github.com/acquia/systemd-daemon.git
   revision: 0f9a624f99ea50b35508c2fa894942092636c661
   ref: wip
   specs:
@@ -10,7 +10,7 @@ GEM
   specs:
     mini_portile2 (2.4.0)
     mysql2 (0.4.2)
-    nokogiri (1.10.4)
+    nokogiri (1.10.9)
       mini_portile2 (~> 2.4.0)
     sqlite3 (1.3.11)
 
@@ -19,7 +19,7 @@ PLATFORMS
 
 DEPENDENCIES
   mysql2
-  nokogiri (>= 1.10.4)
+  nokogiri (>= 1.10.8)
   sqlite3
   systemd-daemon!
 
